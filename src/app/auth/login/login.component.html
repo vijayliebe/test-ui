@@ -1,0 +1,28 @@
+<div class="flex items-center justify-center h-screen" style="height: calc(100vh - 8em);">
+    <div class="rounded-lg text-center" style="width: 30%;">
+        <mat-card appearance="outlined">
+            <mat-card-content>
+                <div class="container mx-auto">
+                    <h2 class="text-xl">Login</h2>
+
+                    <form class="mt-6" [formGroup]="loginForm" (submit)="onSubmit()">
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput id="email" formControlName="email" type="email" required />
+                            <mat-error *ngIf="loginForm.controls['email'].invalid">Email is required</mat-error>
+                        </mat-form-field>
+                        
+                        <br/>
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password" id="password" required />
+                            <mat-error *ngIf="loginForm.controls['password'].invalid">Password is required</mat-error>
+                        </mat-form-field>
+                        <br/>
+                        <button class="ml-3" mat-raised-button type="submit" [disabled]="loginForm.invalid">Login</button>
+                    </form>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

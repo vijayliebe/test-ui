@@ -1,0 +1,8 @@
+nav a {
+    font-weight: 500;
+    color: #3f51b5;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

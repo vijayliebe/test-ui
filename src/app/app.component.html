@@ -1,0 +1,20 @@
+<div class="app-container">
+  <div class="border-b border-black mb-5">
+    <h1 class="text-2xl pb-2">{{title}}</h1>
+   
+    <nav class="absolute top-4 right-5 flex space-x-4" *ngIf="!isAuthenticated()">
+      <a href="http://localhost:3000/api" target="_blank" mat-button>API docs</a> 
+      <a routerLink="/auth/login" mat-button>Login</a>
+      <a routerLink="/auth/register" mat-button>Register</a>
+    </nav>
+
+    <nav class="absolute top-4 right-5 flex space-x-4"  *ngIf="isAuthenticated()">
+      <a href="http://localhost:3000/api" target="_blank">API docs</a> 
+      <span >{{userEmail}}</span> 
+      <button style="margin-top: -5px;" mat-button (click)="logout()">Logout</button>
+    </nav>
+
+  </div>
+  
+  <router-outlet></router-outlet>
+</div>

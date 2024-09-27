@@ -1,0 +1,54 @@
+<div class="flex items-center justify-center h-screen" style="height: calc(100vh - 8em);">
+  <div class="rounded-lg text-center" style="width: 30%;">
+      <mat-card appearance="outlined">
+          <mat-card-content>
+              <div class="container mx-auto">
+                  <h2 class="text-xl">Register</h2>
+
+                  <form class="mt-6" [formGroup]="registerForm" (submit)="onSubmit()">
+                      <mat-form-field>
+                          <mat-label>Email</mat-label>
+                          <input matInput id="email" formControlName="email" type="email" required />
+                          <mat-error *ngIf="registerForm.controls['email'].invalid">Email is required</mat-error>
+                      </mat-form-field>
+                      
+                      <br/>
+                      <mat-form-field>
+                          <mat-label>Password</mat-label>
+                          <input matInput type="password" formControlName="password" id="password" required />
+                          <mat-error *ngIf="registerForm.controls['password'].invalid">Password is required</mat-error>
+                      </mat-form-field>
+                      <br/>
+                      <button class="ml-3" mat-raised-button type="submit" [disabled]="registerForm.invalid">Register</button>
+                  </form>
+              </div>
+          </mat-card-content>
+      </mat-card>
+  </div>
+</div>
+
+<!-- <div class="flex items-center justify-center h-screen">
+  <div class="bg-gray-100 p-4 rounded-lg">
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div class="container mx-auto">
+          <h2 class="text-xl">Register</h2>
+
+          <form class="mt-6" (submit)="onSubmit()">
+            <mat-form-field class="mr-3">
+              <mat-label>Email</mat-label>
+              <input matInput [(ngModel)]="email" name="email" required />
+            </mat-form-field>
+            <br />
+            <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput type="password" [(ngModel)]="password" name="password" required />
+            </mat-form-field>
+            <br />
+            <button class="ml-3" mat-raised-button type="submit">Register</button>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> -->
