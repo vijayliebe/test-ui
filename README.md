@@ -31,10 +31,11 @@ docker-compose -v
 2. clone repo - `git clone https://github.com/vijayliebe/test-ui.git`
 3. enter into test-ui i.e. angular repo folder - `cd test-ui`
 4. run docker-compose for angular, nestjs & postgres - `docker-compose up`
-    - a. `docker stop $(docker ps -a -q)`
-    - b. `docker rm $(docker ps -a -q)`
-    - c. `docker rmi postgres test-api/nestjs:1.0 test-ui/angular:1.0`
-    - d. Remove `pgdata` folder in `test-api` - `cd test-api && rm -rf pgdata`
+    - If there is still any issue while setup, run this command and then above again -
+        - a. `docker stop $(docker ps -a -q)`
+        - b. `docker rm $(docker ps -a -q)`
+        - c. `docker rmi postgres test-api/nestjs:1.0 test-ui/angular:1.0`
+        - d. Remove `pgdata` folder in `test-api` - `cd test-api && rm -rf pgdata`
 5. Register a user by visiting - http://localhost:4200/auth/register
 6. Login using registered user by visiting - http://localhost:4200/auth/login
 7. View / Create / Edit / Delete todos by visiting - http://localhost:4200/todos 
@@ -46,14 +47,14 @@ docker-compose -v
 2. enter into repo - `cd test-ui`
 3. run docker-compose for angular, nestjs & postgres - `docker-compose up` 
 
-- Note :- 
-    - a. Make sure `test-api` folder i.e. NestJS app is also present in parent folder
-    - b. No need to use docker setup step mentioned in test-api repo
+    - Note :- 
+        - a. Make sure `test-api` folder i.e. NestJS app is also present in parent folder
+        - b. No need to use docker setup step mentioned in test-api repo
 
-- If there is still any issue while setup, run this command and then above again -
-    - a. `docker stop $(docker ps -a -q)`
-    - b. `docker rm $(docker ps -a -q)`
-    - c. `docker rmi postgres test-api/nestjs:1.0 test-ui/angular:1.0`    
+    - If there is still any issue while setup, run this command and then above again -
+        - a. `docker stop $(docker ps -a -q)`
+        - b. `docker rm $(docker ps -a -q)`
+        - c. `docker rmi postgres test-api/nestjs:1.0 test-ui/angular:1.0`    
 
 4. Access angular app at port 4200 - http://localhost:4200
 
